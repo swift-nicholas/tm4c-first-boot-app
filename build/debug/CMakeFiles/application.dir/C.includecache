@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/memory_map.h
+
+/home/nicholas/development/swift/tm4c-first-boot-app/src/main.c
+stdint.h
+-
+memory_map.h
+/home/nicholas/development/swift/tm4c-first-boot-app/src/memory_map.h
+stdbool.h
+-
+driverlib/gpio.h
+-
+driverlib/interrupt.h
+-
+driverlib/pin_map.h
+-
+driverlib/sysctl.h
+-
+inc/hw_memmap.h
+-
+
+/home/nicholas/opt/ti/tivaware/SW-TM4C-2.2.0.295/driverlib/gpio.h
+
+/home/nicholas/opt/ti/tivaware/SW-TM4C-2.2.0.295/driverlib/interrupt.h
+
+/home/nicholas/opt/ti/tivaware/SW-TM4C-2.2.0.295/driverlib/pin_map.h
+
+/home/nicholas/opt/ti/tivaware/SW-TM4C-2.2.0.295/driverlib/sysctl.h
+
+/home/nicholas/opt/ti/tivaware/SW-TM4C-2.2.0.295/inc/hw_memmap.h
+
