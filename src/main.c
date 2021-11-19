@@ -18,7 +18,18 @@ int main(void)
   system_init();
 
   while (1)
-    ;
+  {
+    for (uint32_t i = 0; i < 1000000; i++)
+    {
+      __asm(" nop");
+    }
+    GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, 0x0);
+    for (uint32_t i = 0; i < 1000000; i++)
+    {
+      __asm(" nop");
+    }
+    GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, GPIO_PIN_0);
+  }
 }
 
 void system_init(void)
