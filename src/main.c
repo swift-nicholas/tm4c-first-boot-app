@@ -13,27 +13,22 @@ uint32_t g_ui32SysClock;
 
 void system_init(void);
 
-int main(void)
-{
+int main(void) {
   system_init();
 
-  while (1)
-  {
-    for (uint32_t i = 0; i < 1000000; i++)
-    {
+  while (1) {
+    for (uint32_t i = 0; i < 1000000; i++) {
       __asm(" nop");
     }
     GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, 0x0);
-    for (uint32_t i = 0; i < 1000000; i++)
-    {
+    for (uint32_t i = 0; i < 1000000; i++) {
       __asm(" nop");
     }
     GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, GPIO_PIN_0);
   }
 }
 
-void system_init(void)
-{
+void system_init(void) {
   /* configure the clock for 120mhz */
   g_ui32SysClock = SysCtlClockFreqSet(
       (SYSCTL_XTAL_25MHZ | SYSCTL_OSC_MAIN | SYSCTL_USE_PLL | SYSCTL_CFG_VCO_240), 120000000);
