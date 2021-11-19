@@ -218,6 +218,7 @@ extern uint32_t __data_start__;
 extern uint32_t __data_end__;
 extern uint32_t __bss_start__;
 extern uint32_t __bss_end__;
+extern uint32_t __app_start__;
 
 //*****************************************************************************
 //
@@ -231,6 +232,11 @@ extern uint32_t __bss_end__;
 //*****************************************************************************
 void ResetISR(void)
 {
+  /* Set the vector table base address */
+  uint32_t *vector_table = (uint32_t *)&__app_start__;
+  uint32_t *vtor = (uint32_t *)0xE000ED08;
+  *vtor = ((uint32_t)vector_table & 0xFFFFFFF8);
+
   //
   // Enable the floating-point unit.  This must be done here to handle the
   // case where main() uses floating-point and the function prologue saves
